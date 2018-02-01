@@ -6,8 +6,15 @@
  * @param  { Number } b
  * @return { Number }
  */
-
-
+console.log("greaterNumber function \n")
+function greaterNumber(a,b) {
+	if (a > b) {
+	return a;
+  }else {
+  	return b
+  }
+}
+console.log(greaterNumber(6, 6.8))
 /**
  * Create a function called 'stringOfNumbers'.
  * This function will take in 1 parameter
@@ -17,6 +24,10 @@
  * @param  { Number } n
  * @return { String }
  */
+function stringOfNumbers(m) {
+	
+}
+
 
 
 /**
