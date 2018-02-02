@@ -24,11 +24,15 @@ console.log(greaterNumber(6, 6.8))
  * @param  { Number } n
  * @return { String }
  */
-function stringOfNumbers(m) {
-	
+function stringOfNumbers(n) {
+	var t = [ ]
+	for (var i=0; i<=n; i++) {
+		t.push(i)
+	}
+	return t.toString()
 }
 
-
+console.log(stringOfNumbers(10))
 
 /**
  * Create a function called 'sumOfArray'.
@@ -38,8 +42,20 @@ function stringOfNumbers(m) {
  * @param  { array } arr
  * @return { Number }
  */
+function sumOfArray(arr) {
+	var sum = 0
+	for (var i=0; i<=arr.length-1; i++) {
+		if (isNaN(arr[i])) {
+			console.log("error : " + arr[i] + " at index " + i + " thats an incorrect input! procceed to the next")
+			continue
+		} else {
+			sum +=arr[i]
+		}
+	} 
+	return sum
+}	
 
-
+console.log("sum of array is " + sumOfArray([5,25,40,"antimatter",25, "matter", 7, function annihilate(){console.log("annihilate")}, 7, "True", 71]))
 /**
  * Create a function called 'getEvens'.
  * This function will take in a parameter that is an array.
@@ -47,7 +63,18 @@ function stringOfNumbers(m) {
  * @param  { array } arr
  * @return { array }
  */
+function getEvens(arr) {
+	console.log("original : " + arr)
+	var evenArr = [ ]
+	for(var i=0; i<=arr.length-1; i++) {
+		if (arr[i] % 2 === 0) {
+			evenArr.push(arr[i])
+		}
+	}
+	return evenArr
 
+}
+console.log("new : " + getEvens([3,2,9,4,6,10,15,29,220]));
 
 /**
  * Create a function called 'getOdds'.
@@ -56,8 +83,17 @@ function stringOfNumbers(m) {
  * @param  { array } arr
  * @return { array }
  */
-
-
+function getOdds(arr) {
+	console.log("original : " + arr)
+	var oddArr = [ ]
+	for (var i=0; i<=arr.length-1; i++) {
+		if (arr[i] % 2 !== 0) {
+			oddArr.push(arr[i])
+		}
+	}
+	return oddArr
+}
+console.log("new ; " + getOdds([3,2,9,4,6,10,15,29,220,1597]))
 /**
  * Create a function called 'calculate'.
  * This function will take in 3 parameters:
@@ -72,3 +108,35 @@ function stringOfNumbers(m) {
  * @param  { String } operator ('add', subtract, 'multiply', 'divide')
  * @return { Number/String }
  */
+function calculate(firstNumber, secondNumber, theResult) {
+	switch (theResult.toLowerCase()) {
+		case "add":
+			return firstNumber + secondNumber
+			break;
+
+	
+	case "subtract":
+			return firstNumber + secondNumber
+			break;
+
+	
+	case "multiply":
+			return firstNumber + secondNumber
+			break;
+
+
+	case "divide":
+			return firstNumber + secondNumber
+			break;						
+	
+
+	default:
+		return "not the right operator. Try Again..."			
+			
+	}
+}
+console.log(calculate(15, 3, "addition"))
+console.log(calculate(15, 3, "subtract"))
+console.log(calculate(15, 3, "multiplication"))
+console.log(calculate(15, 3, "division"))
+console.log(calculate(15, 3, "ERROR"))
